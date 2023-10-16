@@ -1,4 +1,4 @@
-package dkit.oop;
+package dkit.oop;   // Oct 2023
 
 /**
  * Abstract class Shape
@@ -15,10 +15,22 @@ public class App
 
     public void start() {
 
-        //  Shape s1 = new Shape(2,3);  // compiler will complain. Cannot create an object of an Abstract class.
+        // We cannot create an object of an Abstract class.
+        // (ie we cannot instantiate an Abstract class)
+        //  Shape s1 = new Shape(2,3); // uncomment and note the compiler error message.
+        //
+        // This is sensible, because an abstract class is supposed to represent an abstraction
+        // of a class of objects that stores only things common to all objects,
+        // but not the full structure of any actual object types.
 
-        Circle c1 = new Circle(1,2,5);
+        Circle c1 = new Circle(1,2,5);  // instantiate a "concrete" class
         System.out.println(c1.toString());
+
+        // The following code calls getX() and getY() on a Circle type object c1
+        // These methods exist for c1, because they have been inherited in Circle
+        // from the Shape class.
+        System.out.println("Circle c1: x=" + c1.getX() + ", y="+c1.getY());
+
 
         //TODO
         // implement the Rectangle class (see skeleton Rectangle class).
