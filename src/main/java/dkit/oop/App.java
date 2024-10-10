@@ -1,4 +1,4 @@
-package dkit.oop;   // Oct 2023    SOLUTION
+package dkit.oop;   // Oct 2024    SOLUTION (see Rectangle Class)
 
 import java.util.ArrayList;
 
@@ -46,6 +46,7 @@ public class App
         ArrayList<Shape> shapesList = new ArrayList<>();
         shapesList.add( new Circle(2,3,10));
         shapesList.add( new Circle(3,4,12));
+
         shapesList.add( new Rectangle(4,8,30,25));
         shapesList.add( new Rectangle(12,14,15,25));
 
