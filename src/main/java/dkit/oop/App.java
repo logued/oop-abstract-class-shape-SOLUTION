@@ -41,16 +41,19 @@ public class App
 
         //TODO
         // create an ArrayList and populate it with two Circles and two Rectangles.
-        // write a displayList() method that accepts the list and display all elements.
-        // using a for loop, sum the area of all the shapes and output that sum.
         ArrayList<Shape> shapesList = new ArrayList<>();
         shapesList.add( new Circle(2,3,10));
         shapesList.add( new Circle(3,4,12));
 
+        // write a displayShapes() method that accepts the list and display all elements.
+        // using a for loop, sum the area of all the shapes and output that sum.
+        displayShapes( shapesList );
+
         shapesList.add( new Rectangle(4,8,30,25));
         shapesList.add( new Rectangle(12,14,15,25));
-
         displayShapes( shapesList );
+
+
         double totalArea = sumOfAreas( shapesList );
         System.out.println("Sum of shape areas :" + totalArea);
 
@@ -65,6 +68,21 @@ public class App
         // use a loop in App main to display the perimeters of all the shapes in the list
     }
 
+    public void displayShapes( ArrayList<Shape> list) {
+        for( Shape shape : list )
+            System.out.println(shape.toString());
+                // calls version of toString depending on object type
+    }
+
+    /**
+     * In order to sum up the area of all shapes, we rely on each shape object having
+     * an area() method.  By defining an abstract area() method in the shape superclass,
+     * we know that all subclasses of Shape must have an area() method, because they are
+     * forced to do so by the compiler.
+     *
+     * @param list
+     * @return
+     */
     public double sumOfAreas( ArrayList<Shape> list) {
         double sum = 0.0;
         for(Shape shape : list)
@@ -73,10 +91,7 @@ public class App
         return sum;
     }
 
-    public void displayShapes( ArrayList<Shape> list) {
-        for( Shape shape : list )
-            System.out.println(shape);
-    }
+
 
 
 }
